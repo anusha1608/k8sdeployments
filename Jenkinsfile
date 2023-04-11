@@ -7,8 +7,8 @@ pipeline {
     options {
         timestamps()
         buildDiscarder(logRotator(numToKeepStr: '2', artifactNumToKeepStr: '2'))
-        timeout(time: 240, units: 'MINUTES')
-        disableConcurrentBuilds
+        timeout(time: 240, unit: 'MINUTES')
+        disableConcurrentBuilds()
     }
     stages {
         stage ('K8SManifest-Checkout') {
